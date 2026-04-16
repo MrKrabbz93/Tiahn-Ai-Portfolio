@@ -2,35 +2,59 @@
 import { useEffect, useRef, useState } from "react";
 import mermaid from "mermaid";
 
-let isMermaidInitialized = false;
-
 export default function Mermaid({ chart }: { chart: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [svgContent, setSvgContent] = useState<string>('');
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (!isMermaidInitialized) {
-      mermaid.initialize({ startOnLoad: false, theme: 'dark' });
-      isMermaidInitialized = true;
-    }
+    // Configure Mermaid for dark theme + larger, cleaner output
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "dark",
+      flowchart: {
+        curve: "basis",
+        useMaxWidth: true,
+      },
+      securityLevel: "loose",
+      themeVariables: {
+        primaryColor: "#10b981",        // Emerald accent
+        primaryTextColor: "#f4f4f5",
+        primaryBorderColor: "#10b981",
+        lineColor: "#64748b",
+        background: "#18181b",
+        mainBkg: "#27272a",
+        nodeBorder: "#10b981",
+        fontSize: "16px",
+      },
+    });
 
-    const renderMermaid = async () => {
-      try {
-        const id = `mermaid-${Math.random().toString(36).substring(7)}`;
-        const { svg } = await mermaid.render(id, chart);
-        setSvgContent(svg);
-      } catch (e) {
-        console.error("Mermaid parsing failed", e);
-      }
-    };
-    
-    renderMermaid();
+    if (ref.current) {
+      const id = `mermaid-${Date.now()}`;
+      
+      mermaid.render(id, chart).then(({ svg }) => {
+        if (ref.current) {
+          ref.current.innerHTML = svg;
+          setIsLoaded(true);
+          
+          // Make SVG larger and more prominent
+          const svgElement = ref.current.querySelector("svg");
+          if (svgElement) {
+            svgElement.setAttribute("width", "100%");
+            svgElement.setAttribute("height", "auto");
+            svgElement.style.maxWidth = "100%";
+            svgElement.style.minHeight = "280px";   // Larger diagrams
+          }
+        }
+      });
+    }
   }, [chart]);
 
   return (
     <div 
-      className="my-8 bg-zinc-900 border border-zinc-700 p-4 rounded-2xl overflow-x-auto overflow-y-hidden"
-      dangerouslySetInnerHTML={{ __html: svgContent }}
+      ref={ref}
+      className={`bg-zinc-900 border border-zinc-700 rounded-2xl p-6 transition-all duration-300 ${
+        isLoaded ? "opacity-100" : "opacity-70"
+      }`}
     />
   );
 }
