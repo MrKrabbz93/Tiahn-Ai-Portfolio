@@ -3,20 +3,64 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-background: oklch(0.1 0.01 240); /* deep dark */
-  --color-foreground: oklch(0.95 0.01 240); /* near white */
-  --color-zinc-950: oklch(0.1 0.01 240);
-  --color-zinc-900: oklch(0.15 0.01 240);
-  --color-zinc-800: oklch(0.22 0.01 240);
-  --color-zinc-100: oklch(0.95 0.01 240);
+  --color-background: #0a0a0a;
+  --color-foreground: #f4f4f5;
+  --color-zinc-950: #0a0a0a;
+  --color-zinc-900: #111111;
+  --color-zinc-800: #1f1f1f;
+  --color-zinc-700: #27272a;
+  --color-emerald-400: #10b981;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
-  @apply bg-zinc-950 text-zinc-100;
+  background-color: #0a0a0a;
+  color: #f4f4f5;
   font-feature-settings: "kern" 1, "ss01" 1;
 }
 
-/* Ensure dark mode sticks even if browser prefers light */
-html {
+/* Enhanced dark mode consistency */
+.dark * {
   color-scheme: dark;
+}
+
+/* Smooth scrollbar for modern feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Emerald accent utilities */
+.emerald-glow {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
+/* Project card hover enhancement */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  border-color: #10b981;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
+              0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
