@@ -6,6 +6,7 @@ import Mermaid from "./Mermaid";
 const projects = [
   {
     title: "Mining Workflow Simulator",
+    slug: "mining",
     desc: "Predictive maintenance & automated routing for resources sector (Fortescue-style optimisation)",
     roi: "Simulated 35% reduction in manual workflows • Real-time agentic orchestration",
     diagram: `graph TD
@@ -16,6 +17,7 @@ const projects = [
   },
   {
     title: "AI Agency Operating System",
+    slug: "agency",
     desc: "Full multi-division autonomous AI agency framework (Scout → Personalisation → Executor → Analyst)",
     roi: "10x throughput in organisational operations • Fully agent-first architecture",
     diagram: `graph LR
@@ -26,6 +28,7 @@ const projects = [
   },
   {
     title: "No-Code Consultant Interface",
+    slug: "consultant",
     desc: "Rapid-deployment AI tool for business consultants with predictive analytics",
     roi: "Built in <2 hours with Google Antigravity • End-to-end from idea to live",
     diagram: `graph TD
@@ -35,6 +38,7 @@ const projects = [
   },
   {
     title: "Predictive Resource Analytics Platform",
+    slug: "analytics",
     desc: "Enterprise data pipeline parser & automated workflow generator (Lakestone.ai style)",
     roi: "Automated pipeline parsing • 40% efficiency gain in data-heavy operations",
     diagram: `graph TD
@@ -64,7 +68,7 @@ export default function Projects() {
               <Mermaid chart={project.diagram} />
               <div className="mt-8 flex gap-4">
                 <a 
-                  href={`/Tiahn-Ai-Portfolio/demos/${project.title.toLowerCase().split(' ')[0]}`}
+                  href={`/Tiahn-Ai-Portfolio/demos/${project.slug}`}
                   className="px-6 py-3 bg-emerald-500 text-zinc-950 rounded-xl font-bold hover:bg-emerald-400 transition transform hover:scale-105"
                 >
                   Launch Live Simulator →
