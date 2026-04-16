@@ -2,7 +2,8 @@
 const nextConfig = {
   output: 'export',
   images: { unoptimized: true },
-  basePath: '', // change to '/repo-name' only if your repo isn't the root
+  basePath: '/Tiahn-Ai-Portfolio',
+  assetPrefix: '/Tiahn-Ai-Portfolio',
 };
 
 export default nextConfig;
