@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Next.js build outputs
+.next/
+out/
+
+# Production
+.next/
+out/
+
+# Misc
+.DS_Store
+*.log
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Turbopack / dev cache
+.next/dev/
+.next/cache/
