@@ -62,7 +62,15 @@ export default function Projects() {
               <p className="text-zinc-400 mb-3">{project.desc}</p>
               <p className="textemerald-400 font-semibold mb-8">{project.roi}</p>
               <Mermaid chart={project.diagram} />
-              <p className="text-xs text-zinc-500 mt-6">Live demo &amp; full repo folder in GitHub</p>
+              <div className="mt-8 flex gap-4">
+                <a 
+                  href={`/Tiahn-Ai-Portfolio/demos/${project.title.toLowerCase().split(' ')[0]}`}
+                  className="px-6 py-3 bg-emerald-500 text-zinc-950 rounded-xl font-bold hover:bg-emerald-400 transition transform hover:scale-105"
+                >
+                  Launch Live Simulator →
+                </a>
+                <span className="text-xs text-zinc-500 self-center">Built in &lt;4 hours • Antigravity Powered</span>
+              </div>
             </motion.div>
           ))}
         </div>
