@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-950 to-zinc-900 px-6">
@@ -10,6 +12,13 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl text-center"
       >
+        <Image 
+          src="/Tiahn-Ai-Portfolio/profile.jpg" 
+          alt="Tiahn H Profile" 
+          width={180} 
+          height={180} 
+          className="rounded-full mx-auto mb-8 border-4 border-zinc-800 shadow-[0_0_40px_rgba(16,185,129,0.1)] object-cover"
+        />
         <h1 className="text-7xl font-bold tracking-tighter mb-4">
           AI Architect &amp; No-Code Builder
         </h1>
