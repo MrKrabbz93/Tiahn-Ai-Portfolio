@@ -25,11 +25,11 @@ const projects = [
       Analyst --> Scout`,
   },
   {
-    title: "Vibe-Coded Consultant Interface",
+    title: "No-Code Consultant Interface",
     desc: "Rapid-deployment AI tool for business consultants with predictive analytics",
     roi: "Built in <2 hours with Google Antigravity • End-to-end from idea to live",
     diagram: `graph TD
-      Idea[Vibe Prompt] --> Antigravity[Google Antigravity Agents]
+      Idea[No-Code Prompt] --> Antigravity[Google Antigravity Agents]
       Antigravity --> Platform[Live Consultant Platform]
       Platform --> Predictive[Predictive Analytics]`,
   },

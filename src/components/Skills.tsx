@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { title: "AI Architecture & Vibe Coding", desc: "Agent-first environments & rapid ideation-to-production" },
+  { title: "AI Architecture & No-Code Development", desc: "Agent-first environments & rapid ideation-to-production" },
   { title: "Workflow Automation", desc: "End-to-end AI-driven systems with measurable ROI" },
   { title: "Google Antigravity Mastery", desc: "Primary tool for complex system deployment in hours" },
   { title: "AI Application Development", desc: "From specialist tools to predictive operating systems" },

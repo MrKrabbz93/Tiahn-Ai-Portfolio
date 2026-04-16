@@ -11,7 +11,7 @@ export default function Hero() {
         className="max-w-4xl text-center"
       >
         <h1 className="text-7xl font-bold tracking-tighter mb-4">
-          AI Architect &amp; Vibe Coder
+          AI Architect &amp; No-Code Builder
         </h1>
         <p className="text-2xl text-zinc-400 mb-8">
           Perth WA • No formal IT quals — just production systems built fast with Google Antigravity
