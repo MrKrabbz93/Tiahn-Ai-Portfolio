@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Your Name | AI Architect • Perth WA",
+  title: "Tiahn H | AI Architect • Perth WA",
   description: "Practical AI architecture, agent-first workflows & rapid deployment. Results over qualifications.",
 };
 
